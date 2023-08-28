@@ -40,7 +40,7 @@ export const setApp = async (appId: string, options: Options) => {
     let iconBuff;
     let iconType;
     const fileName = `icon_${randomUUID()}`
-    let signedURL = 'https://xvwzpoazmxkqosrdewyv.supabase.co/storage/v1/object/public/images/capgo.png'
+    let signedURL = 'https://supabase.elcomandero.es/storage/v1/object/public/images/capgo.png'
 
     if (icon && existsSync(icon)) {
         iconBuff = readFileSync(icon);
