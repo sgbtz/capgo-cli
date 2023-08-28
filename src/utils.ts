@@ -33,16 +33,16 @@ getConfig().then(config => {
 export const baseKey = '.capgo_key';
 export const baseKeyPub = `${baseKey}.pub`;
 // eslint-disable-next-line import/no-mutable-exports
-export let host = 'https://capgo.app'
+export let host = 'https://sguisasola--invicta-capgo.netlify.app'
 // eslint-disable-next-line import/no-mutable-exports
-export let hostWeb = 'https://web.capgo.app'
+export let hostWeb = 'https://sguisasola--invicta-capgo.netlify.app'
 // eslint-disable-next-line import/no-mutable-exports
 export let hostSupa = process.env.SUPA_DB === 'production'
-    ? 'https://xvwzpoazmxkqosrdewyv.supabase.co' : process.env.SUPA_DB || 'https://aucsybvnhavogdmzwtcw.supabase.co';
+    ? 'https://supabase.elcomandero.es' : process.env.SUPA_DB || 'https://supabase.elcomandero.es';
 /* eslint-disable */
 export let supaAnon = process.env.SUPA_DB === 'production'
-    ? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2d3pwb2F6bXhrcW9zcmRld3l2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTI4MjExOTcsImV4cCI6MjAwODM5NzE5N30.wjxOlMfJoM2IuiFOmLGeP6YxdkF7Scgcfwu8TnPw_fY'
-    : process.env.SUPA_ANON || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1Y3N5YnZuaGF2b2dkbXp3dGN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTQ1Mzk1MDYsImV4cCI6MTk3MDExNTUwNn0.HyuZmo_EjF5fgZQU3g37bdNardK1CLHgxXmYqtr59bo'
+    ? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJyb2xlIjogImFub24iLAogICJpc3MiOiAic3VwYWJhc2UiLAogICJpYXQiOiAxNjkzMTczNjAwLAogICJleHAiOiAxODUxMDI2NDAwCn0.ZVUuh4pgp08v5ZQxrC638tTV2pwNivu_Sr0oevejQ3Y'
+    : process.env.SUPA_ANON || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJyb2xlIjogImFub24iLAogICJpc3MiOiAic3VwYWJhc2UiLAogICJpYXQiOiAxNjkzMTczNjAwLAogICJleHAiOiAxODUxMDI2NDAwCn0.ZVUuh4pgp08v5ZQxrC638tTV2pwNivu_Sr0oevejQ3Y'
 /* eslint-enable */
 
 export const defaulPublicKey = `-----BEGIN RSA PUBLIC KEY-----
@@ -290,7 +290,7 @@ export const updateOrCreateChannel = async (supabase: SupabaseClient<Database>,
 
 export const useLogSnag = (): LogSnag => {
     const logsnag = new LogSnag({
-        token: 'c124f5e9d0ce5bdd14bbb48f815d5583',
+        token: 'ee9b0c7e7ee0c8875616a87e3e81e6c3',
         project: 'capgo',
     })
     return logsnag
