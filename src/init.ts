@@ -40,7 +40,7 @@ const step2 = async (userId: string, snag: LogSnag, appId: string, options: Supe
     await cancelCommand(doAdd, userId, snag);
     if (doAdd) {
         const s = p.spinner();
-        s.start(`Running: npx @capgo/cli@latest app add ${appId}`);
+        s.start(`Running: npx @sgbtz/capgo-cli@latest app add ${appId}`);
         const addRes = await addApp(appId, options, false);
         if (!addRes) {
             s.stop(`App already add ✅`);
@@ -48,7 +48,7 @@ const step2 = async (userId: string, snag: LogSnag, appId: string, options: Supe
             s.stop(`App add Done ✅`);
         }
     } else {
-        p.log.info(`Run yourself "npx @capgo/cli@latest app add ${appId}"`)
+        p.log.info(`Run yourself "npx @sgbtz/capgo-cli@latest app add ${appId}"`)
     }
     await markStep(userId, snag, 2)
 }
@@ -60,7 +60,7 @@ const step3 = async (userId: string, snag: LogSnag,
     if (doChannel) {
         const s = p.spinner();
         // create production channel public
-        s.start(`Running: npx @capgo/cli@latest channel add ${defaultChannel} ${appId} --default`);
+        s.start(`Running: npx @sgbtz/capgo-cli@latest channel add ${defaultChannel} ${appId} --default`);
         const addChannelRes = await addChannel(defaultChannel, appId, {
             default: true,
             apikey,
@@ -72,7 +72,7 @@ const step3 = async (userId: string, snag: LogSnag,
         }
     }
     else {
-        p.log.info(`Run yourself "npx @capgo/cli@latest channel add ${defaultChannel} ${appId} --default"`)
+        p.log.info(`Run yourself "npx @sgbtz/capgo-cli@latest channel add ${defaultChannel} ${appId} --default"`)
     }
     await markStep(userId, snag, 3)
 }
@@ -152,7 +152,7 @@ const step6 = async (userId: string, snag: LogSnag,
     await cancelCommand(doEncrypt, userId, snag);
     if (doEncrypt) {
         const s = p.spinner();
-        s.start(`Running: npx @capgo/cli@latest key create`);
+        s.start(`Running: npx @sgbtz/capgo-cli@latest key create`);
         const keyRes = await createKey({}, false);
         if (!keyRes) {
             s.stop(`Cannot create key ❌`);
@@ -192,7 +192,7 @@ const step8 = async (userId: string, snag: LogSnag,
     await cancelCommand(doBundle, userId, snag);
     if (doBundle) {
         const s = p.spinner();
-        s.start(`Running: npx @capgo/cli@latest bundle upload`);
+        s.start(`Running: npx @sgbtz/capgo-cli@latest bundle upload`);
         const uploadRes = await uploadBundle(appId, {
             channel: defaultChannel,
             apikey,
@@ -204,7 +204,7 @@ const step8 = async (userId: string, snag: LogSnag,
             s.stop(`Upload Done ✅`);
         }
     } else {
-        p.log.info(`Upload yourself with command: npx @capgo/cli@latest bundle upload`)
+        p.log.info(`Upload yourself with command: npx @sgbtz/capgo-cli@latest bundle upload`)
     }
     await markStep(userId, snag, 8)
 }
@@ -258,7 +258,7 @@ export const initApp = async (apikey: string, appId: string, options: SuperOptio
     apikey = apikey || findSavedKey()
 
     const log = p.spinner();
-    log.start('Running: npx @capgo/cli@latest login ***');
+    log.start('Running: npx @sgbtz/capgo-cli@latest login ***');
     const loginRes = await login(apikey, options, false);
     if (!loginRes) {
         log.stop('Login already done ✅');
@@ -282,7 +282,7 @@ export const initApp = async (apikey: string, appId: string, options: SuperOptio
     await markStep(userId, snag, 0)
     p.log.info(`Welcome onboard ✈️!`);
     p.log.info(`Your Capgo update system is setup`);
-    p.log.info(`Next time use \`npx @capgo/cli@latest bundle upload\` to only upload your bundle`);
+    p.log.info(`Next time use \`npx @sgbtz/capgo-cli@latest bundle upload\` to only upload your bundle`);
     p.outro(`Bye 👋`);
     process.exit()
 }
